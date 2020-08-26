@@ -1,0 +1,16 @@
+{
+	"name": "wolfthemes/wolf-custom-post-meta",
+	"description": "Custom post meta (views, likes, reading time).",
+	"type": "wordpress-plugin",
+	"homepage": "https://github.com/wolfthemes/wolf-custom-post-meta",
+	"authors": [
+		{
+			"name": "WolfThemes",
+			"email": "contact@wolfthemes.com",
+			"homepage": "https://wolfthemes.com"
+		}
+	],
+	"require": {
+		"php": ">=5.6"
+	}
+}

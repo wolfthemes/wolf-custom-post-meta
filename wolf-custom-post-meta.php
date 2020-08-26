@@ -1,42 +1,27 @@
 <?php
 /**
  * Plugin Name: Wolf Custom Post Meta
- * Plugin URI: %LINK%
- * Description: %DESCRIPTION%
- * Version: %VERSION%
- * Author: %AUTHOR%
- * Author URI: %AUTHORURI%
- * Requires at least: %REQUIRES%
- * Tested up to: %TESTED%
+ * Plugin URI: https://wlfthm.es/wolf-custom-post-meta
+ * Description: Test
+ * Version: 1.0.0
+ * Author: WolfThemes
+ * Author URI: https://wolfthemes.com
+ * Requires at least: 5.0
+ * Tested up to: 5.5
  *
  * Text Domain: %TEXTDOMAIN%
  * Domain Path: /languages/
  *
  * @package %PACKAGENAME%
  * @category Core
- * @author %AUTHOR%
+ * @author WolfThemes
  *
- * Being a free product, this plugin is distributed as-is without official support.
- * Verified customers however, who have purchased a premium theme
- * at http://themeforest.net/user/Wolf-Themes/portfolio?ref=Wolf-Themes
+ * Verified customers who have purchased a premium theme at https://wlfthm.es/tf/
  * will have access to support for this plugin in the forums
- * http://help.wolfthemes.com/
- *
- * Copyright (C) 2013 Constantin Saguin
- * This WordPress Plugin is a free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * It is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * See http://www.gnu.org/licenses/gpl-3.0.html
+ * https://wlfthm.es/help/
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Wolf_Custom_Post_Meta' ) ) {
 	/**
@@ -82,20 +67,6 @@ if ( ! class_exists( 'Wolf_Custom_Post_Meta' ) ) {
 		}
 
 		/**
-		 * Cloning is forbidden.
-		 */
-		public function __clone() {
-			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', '%TEXTDOMAIN%' ), '1.0' );
-		}
-
-		/**
-		 * Unserializing instances of this class is forbidden.
-		 */
-		public function __wakeup() {
-			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', '%TEXTDOMAIN%' ), '1.0' );
-		}
-
-		/**
 		 * %NAME% Constructor.
 		 */
 		public function __construct() {
@@ -111,8 +82,11 @@ if ( ! class_exists( 'Wolf_Custom_Post_Meta' ) ) {
 		 * Hook into actions and filters
 		 */
 		private function init_hooks() {
+
 			register_activation_hook( __FILE__, array( $this, 'activate' ) );
 			add_action( 'init', array( $this, 'init' ), 0 );
+
+			add_action( 'admin_init', array( $this, 'plugin_update' ) );
 		}
 
 		/**
@@ -237,6 +211,34 @@ if ( ! class_exists( 'Wolf_Custom_Post_Meta' ) ) {
 		 */
 		public function plugin_path() {
 			return untrailingslashit( plugin_dir_path( __FILE__ ) );
+		}
+
+		/**
+		 * Plugin update
+		 */
+		public function plugin_update() {
+
+			if ( ! class_exists( 'WP_GitHub_Updater' ) ) {
+				include_once 'inc/admin/updater.php';
+			}
+
+			$repo = 'wolfthemes/wolf-custom-post-meta';
+
+			$config = array(
+				'slug' => plugin_basename( __FILE__ ),
+				'proper_folder_name' => 'wolf-custom-post-meta',
+				'api_url' => 'https://api.github.com/repos/' . $repo . '',
+				'raw_url' => 'https://raw.github.com/' . $repo . '/master/',
+				'github_url' => 'https://github.com/' . $repo . '',
+				'zip_url' => 'https://github.com/' . $repo . '/archive/master.zip',
+				'sslverify' => true,
+				'requires' => '5.0',
+				'tested' => '5.5',
+				'readme' => 'README.md',
+				'access_token' => '',
+			);
+
+			new WP_GitHub_Updater( $config );
 		}
 	}
 }

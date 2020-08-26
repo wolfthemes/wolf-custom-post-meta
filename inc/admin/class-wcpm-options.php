@@ -3,15 +3,13 @@
  * %NAME% Options.
  *
  * @class Wolf_Custom_Post_Meta_Options
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Admin
  * @package %PACKAGENAME%/Admin
  * @version %VERSION%
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Wolf_Custom_Post_Meta_Options class.

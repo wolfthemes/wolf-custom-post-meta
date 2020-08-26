@@ -2,7 +2,7 @@
 /**
  * %NAME% AJAX Functions
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Ajax
  * @package %PACKAGENAME%/Functions
  * @version %VERSION%

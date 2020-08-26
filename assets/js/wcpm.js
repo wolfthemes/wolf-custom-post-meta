@@ -2,7 +2,7 @@
  * %NAME% %VERSION%
  */
 /* jshint -W062 */
-/* global WolfCustomPostMetaJSParams */
+/* global WolfCustomPostMetaJSParams, Cookies */
 
 var WolfCustomPostMeta = function( $ ) {
 
@@ -25,7 +25,7 @@ var WolfCustomPostMeta = function( $ ) {
 
 			if ( $( 'body' ).hasClass( 'single' ) ) {
 
-				var $post = $( '[id^="post-"].post' ),
+				var $post = $( '[id^="post-"]' ),
 					postId = this.getPostId( $post ),
 					data = {
 					action: 'wolf_custom_post_meta_ajax_increment_views',
@@ -37,13 +37,13 @@ var WolfCustomPostMeta = function( $ ) {
 		},
 
 		/**
-		 * Increment likes meta count
+		 * Check liked
+		 *
+		 * Verify if a post has already been liked using cookies.
 		 */
-		likes : function( postId ) {
-
+		checkLikedPosts : function() {
 			var _this = this,
-				$item = $( '[id^="post-"].post' ),
-				$this,
+				$item = $( '[id^="post-"]' ),
 				postId;
 
 			$item.each( function () {
@@ -54,6 +54,16 @@ var WolfCustomPostMeta = function( $ ) {
 					$( this ).find( '.wolf-like-this' ).addClass( 'wolf-liked' );
 				}
 			} );
+		},
+
+		/**
+		 * Increment likes meta count
+		 */
+		likes : function( postId ) {
+
+			var $this;
+
+			this.checkLikedPosts();
 
 			$( document ).on( 'click', '.wolf-like-this', function( event ) {
 
@@ -72,16 +82,16 @@ var WolfCustomPostMeta = function( $ ) {
 						postId : postId
 					};
 
+					$this.addClass( 'wolf-liked' );
+
 					$.post( WolfCustomPostMetaJSParams.ajaxUrl , data, function( response ) {
 						if ( response ) {
 
-							Cookies.set( WolfCustomPostMetaJSParams.themeSlug + '-w-likes-' + postId, true )
+							Cookies.set( WolfCustomPostMetaJSParams.themeSlug + '-w-likes-' + postId, true );
 
 							if ( $this.find( '.wolf-likes-count' ).length ) {
 								$this.find( '.wolf-likes-count' ).html( response );
 							}
-
-							$this.addClass( 'wolf-liked' );
 						}
 					} );
 				}

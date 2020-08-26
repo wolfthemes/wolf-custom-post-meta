@@ -4,7 +4,7 @@
  *
  * General core functions available on admin and frontend
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
  * @package %PACKAGENAME%/Core
  * @version %VERSION%
@@ -24,11 +24,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 function wolf_custom_post_meta_get_option( $key, $default = null ) {
 
 	$settings = get_option( 'wolf_custom_post_meta_settings' );
-	
+
 	if ( isset( $settings[ $key ] ) && '' != $settings[ $key ] ) {
-		
+
 		return $settings[ $key ];
-	
+
 	} elseif ( $default ) {
 
 		return $default;

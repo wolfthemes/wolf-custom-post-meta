@@ -3,15 +3,13 @@
  * %NAME% Admin.
  *
  * @class Wolf_Custom_Post_Meta_Admin
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Admin
  * @package %PACKAGENAME%/Admin
  * @version %VERSION%
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Wolf_Custom_Post_Meta_Admin class.
@@ -45,7 +43,7 @@ class Wolf_Custom_Post_Meta_Admin {
 		add_filter( 'plugin_action_links_' . plugin_basename( WCPM_PATH ), array( $this, 'settings_action_links' ) );
 
 		// Plugin update notifications
-		add_action( 'admin_init', array( $this, 'plugin_update' ) );
+		//add_action( 'admin_init', array( $this, 'plugin_update' ) );
 
 		// Add columns to post list
 		//add_filter( 'manage_posts_custom_column', array( $this, 'admin_columns_head_likes' ) );
