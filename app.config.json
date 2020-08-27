@@ -1,8 +1,8 @@
 {
-	"version": "1.0.1",
-	"updated": "2017-11-27",
+	"version": "1.0.2",
+	"updated": "2020-08-26",
 	"slug": "wolf-custom-post-meta",
-	"textdomain": "wolf-custom-post-meta",
+	"name": "Custom Post Meta",
 	"packagename": "WolfCustomPostMeta",
 	"created": "2017-06-01",
 	"createdNice": "1st June 2017",

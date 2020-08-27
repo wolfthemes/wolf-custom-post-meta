@@ -1,10 +1,10 @@
 <?php
 /**
- * %NAME% Frontend Functions
+ * Custom Post Meta Frontend Functions
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Functions
+ * @package WolfCustomPostMeta/Functions
  * @since 10.0
  */
 

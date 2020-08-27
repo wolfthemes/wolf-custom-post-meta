@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% Admin.
+ * Custom Post Meta Admin.
  *
  * @class Wolf_Custom_Post_Meta_Admin
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfCustomPostMeta/Admin
+ * @version 1.0.2
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -55,7 +55,7 @@ class Wolf_Custom_Post_Meta_Admin {
 	 */
 	public function settings_action_links( $links ) {
 		$setting_link = array(
-			'<a href="' . admin_url( 'themes.php?page=wolf-custom-post-meta-settings' ) . '">' . esc_html__( 'Settings', '%TEXTDOMAIN%' ) . '</a>',
+			'<a href="' . admin_url( 'themes.php?page=wolf-custom-post-meta-settings' ) . '">' . esc_html__( 'Settings', 'wolf-custom-post-meta' ) . '</a>',
 		);
 		return array_merge( $links, $setting_link );
 	}
@@ -68,7 +68,7 @@ class Wolf_Custom_Post_Meta_Admin {
 	 */
 	public function admin_columns_head_likes( $columns ) {
 
-		$columns['wolf_likes']   = esc_html__( 'Likes', '%TEXTDOMAIN%' );
+		$columns['wolf_likes']   = esc_html__( 'Likes', 'wolf-custom-post-meta' );
 		return $columns;
 	}
 

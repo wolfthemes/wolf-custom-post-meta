@@ -1,13 +1,13 @@
 <?php
 /**
- * %NAME% Uninstall
+ * Custom Post Meta Uninstall
  *
- * Uninstalling %NAME%
+ * Uninstalling Custom Post Meta
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Uninstaller
- * @version %VERSION%
+ * @package WolfCustomPostMeta/Uninstaller
+ * @version 1.0.2
  */
 
 defined( 'WP_UNINSTALL_PLUGIN' ) || exit;

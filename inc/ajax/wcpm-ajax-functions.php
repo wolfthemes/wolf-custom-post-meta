@@ -1,11 +1,11 @@
 <?php
 /**
- * %NAME% AJAX Functions
+ * Custom Post Meta AJAX Functions
  *
  * @author WolfThemes
  * @category Ajax
- * @package %PACKAGENAME%/Functions
- * @version %VERSION%
+ * @package WolfCustomPostMeta/Functions
+ * @version 1.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

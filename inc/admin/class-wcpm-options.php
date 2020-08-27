@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% Options.
+ * Custom Post Meta Options.
  *
  * @class Wolf_Custom_Post_Meta_Options
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfCustomPostMeta/Admin
+ * @version 1.0.2
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -44,7 +44,7 @@ class Wolf_Custom_Post_Meta_Options {
 	 */
 	public function add_options_menu() {
 
-		add_theme_page( esc_html__( 'Custom Post Meta', '%TEXTDOMAIN%' ), esc_html__( 'Custom Post Meta', '%TEXTDOMAIN%' ), 'edit_plugins', 'wolf-custom-post-meta-settings', array( $this, 'options_form' ) );
+		add_theme_page( esc_html__( 'Custom Post Meta', 'wolf-custom-post-meta' ), esc_html__( 'Custom Post Meta', 'wolf-custom-post-meta' ), 'edit_plugins', 'wolf-custom-post-meta-settings', array( $this, 'options_form' ) );
 	}
 
 	/**
@@ -53,7 +53,7 @@ class Wolf_Custom_Post_Meta_Options {
 	public function register_settings() {
 		register_setting( 'wolf-custom-post-meta-settings', 'wolf_custom_post_meta_settings', array( $this, 'settings_validate' ) );
 		add_settings_section( 'wolf-custom-post-meta-settings', '', array( $this, 'section_intro' ), 'wolf-custom-post-meta-settings' );
-		add_settings_field( 'post_types', esc_html__( 'Post Types', '%TEXTDOMAIN%' ), array( $this, 'setting_post_types' ), 'wolf-custom-post-meta-settings', 'wolf-custom-post-meta-settings' );
+		add_settings_field( 'post_types', esc_html__( 'Post Types', 'wolf-custom-post-meta' ), array( $this, 'setting_post_types' ), 'wolf-custom-post-meta-settings', 'wolf-custom-post-meta-settings' );
 	}
 
 	/**
@@ -104,16 +104,16 @@ class Wolf_Custom_Post_Meta_Options {
 	public function options_form() {
 		?>
 		<div class="wrap">
-			<h2><?php esc_html_e( 'Custom Post Meta Options', '%TEXTDOMAIN%' ); ?></h2>
+			<h2><?php esc_html_e( 'Custom Post Meta Options', 'wolf-custom-post-meta' ); ?></h2>
 			<?php if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] ) { ?>
 			<div id="setting-error-settings_updated" class="updated settings-error">
-				<p><strong><?php esc_html_e( 'Settings saved.', '%TEXTDOMAIN%' ); ?></strong></p>
+				<p><strong><?php esc_html_e( 'Settings saved.', 'wolf-custom-post-meta' ); ?></strong></p>
 			</div>
 			<?php } ?>
 			<form action="options.php" method="post">
 				<?php settings_fields( 'wolf-custom-post-meta-settings' ); ?>
 				<?php do_settings_sections( 'wolf-custom-post-meta-settings' ); ?>
-				<p class="submit"><input name="save" type="submit" class="button-primary" value="<?php esc_html_e( 'Save Changes', '%TEXTDOMAIN%' ); ?>" /></p>
+				<p class="submit"><input name="save" type="submit" class="button-primary" value="<?php esc_html_e( 'Save Changes', 'wolf-custom-post-meta' ); ?>" /></p>
 			</form>
 		</div>
 		<?php

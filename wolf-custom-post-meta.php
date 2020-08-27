@@ -2,17 +2,17 @@
 /**
  * Plugin Name: Wolf Custom Post Meta
  * Plugin URI: https://wlfthm.es/wolf-custom-post-meta
- * Description: Test
- * Version: 1.0.0
+ * Description: Custom post meta (views, likes, reading time).
+ * Version: 1.0.2
  * Author: WolfThemes
  * Author URI: https://wolfthemes.com
  * Requires at least: 5.0
  * Tested up to: 5.5
  *
- * Text Domain: %TEXTDOMAIN%
+ * Text Domain: wolf-custom-post-meta
  * Domain Path: /languages/
  *
- * @package %PACKAGENAME%
+ * @package WolfCustomPostMeta
  * @category Core
  * @author WolfThemes
  *
@@ -30,7 +30,7 @@ if ( ! class_exists( 'Wolf_Custom_Post_Meta' ) ) {
 	 * Contains the main functions for Wolf_Custom_Post_Meta
 	 *
 	 * @class Wolf_Custom_Post_Meta
-	 * @version %VERSION%
+	 * @version 1.0.2
 	 * @since 1.0.0
 	 */
 	class Wolf_Custom_Post_Meta {
@@ -38,26 +38,23 @@ if ( ! class_exists( 'Wolf_Custom_Post_Meta' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '%VERSION%';
+		public $version = '1.0.2';
 
 		/**
-		 * @var %NAME% The single instance of the class
+		 * @var Custom Post Meta The single instance of the class
 		 */
 		protected static $_instance = null;
 
-		/**
-		 * @var string
-		 */
-		private $update_url = 'https://plugins.wolfthemes.com/update';
+
 
 		/**
-		 * Main %NAME% Instance
+		 * Main Custom Post Meta Instance
 		 *
-		 * Ensures only one instance of %NAME% is loaded or can be loaded.
+		 * Ensures only one instance of Custom Post Meta is loaded or can be loaded.
 		 *
 		 * @static
 		 * @see WCPM()
-		 * @return %NAME% - Main instance
+		 * @return Custom Post Meta - Main instance
 		 */
 		public static function instance() {
 			if ( is_null( self::$_instance ) ) {
@@ -67,7 +64,7 @@ if ( ! class_exists( 'Wolf_Custom_Post_Meta' ) ) {
 		}
 
 		/**
-		 * %NAME% Constructor.
+		 * Custom Post Meta Constructor.
 		 */
 		public function __construct() {
 
@@ -112,7 +109,6 @@ if ( ! class_exists( 'Wolf_Custom_Post_Meta' ) ) {
 				'WCPM_SLUG' => plugin_basename( dirname( __FILE__ ) ),
 				'WCPM_PATH' => plugin_basename( __FILE__ ),
 				'WCPM_VERSION' => $this->version,
-				'WCPM_UPDATE_URL' => $this->update_url,
 				'WCPM_DOC_URI' => 'https://docs.wolfthemes.com/documentation/plugins/' . plugin_basename( dirname( __FILE__ ) ),
 				'WCPM_WOLF_DOMAIN' => 'wolfthemes.com',
 			);
@@ -173,7 +169,7 @@ if ( ! class_exists( 'Wolf_Custom_Post_Meta' ) ) {
 		}
 
 		/**
-		 * Init %NAME% when WordPress Initialises.
+		 * Init Custom Post Meta when WordPress Initialises.
 		 */
 		public function init() {
 			// Before init action
@@ -191,8 +187,8 @@ if ( ! class_exists( 'Wolf_Custom_Post_Meta' ) ) {
 		 */
 		public function load_plugin_textdomain() {
 
-			$domain = '%TEXTDOMAIN%';
-			$locale = apply_filters( '%TEXTDOMAIN%', get_locale(), $domain );
+			$domain = 'wolf-custom-post-meta';
+			$locale = apply_filters( 'wolf-custom-post-meta', get_locale(), $domain );
 			load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );
 			load_plugin_textdomain( $domain, FALSE, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 		}

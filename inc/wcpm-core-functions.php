@@ -1,13 +1,13 @@
 <?php
 /**
- * %NAME% core functions
+ * Custom Post Meta core functions
  *
  * General core functions available on admin and frontend
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Core
- * @version %VERSION%
+ * @package WolfCustomPostMeta/Core
+ * @version 1.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

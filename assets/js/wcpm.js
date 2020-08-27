@@ -1,5 +1,5 @@
 /*!
- * %NAME% %VERSION%
+ * Custom Post Meta 1.0.2
  */
 /* jshint -W062 */
 /* global WolfCustomPostMetaJSParams, Cookies */
