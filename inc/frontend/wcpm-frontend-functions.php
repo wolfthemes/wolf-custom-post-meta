@@ -140,7 +140,7 @@ function wolf_custom_post_meta_format_number( $n = 0 ) {
 		$n   = $n / 1000.0;
 		$out = array_shift( $s );
 	}
-	return round( $n, max( 0, 3 - strlen( (int)$n ) ) ) ." $out";
+	return round( absint($n), max( 0, 3 - strlen( (int)$n ) ) ) ." $out";
 }
 
 /**

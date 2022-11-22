@@ -1,5 +1,9 @@
 # Changelog
 
+#### 22th November 2022 - Version 1.0.3
+
+-   Fix: PHP 8 round function error debug message
+
 #### 26th August 2020 - Version 1.0.2
 
 -   Tweak: Unbrand plugin name
