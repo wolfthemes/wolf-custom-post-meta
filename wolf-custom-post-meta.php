@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom Post Meta
  * Plugin URI: https://wlfthm.es/wolf-custom-post-meta
- * Description: Custom post meta (views, likes, reading time).(views, likes, reading time).(views, likes, reading time).(views, likes, reading time).(views, likes, reading time).(views, likes, reading time).
+ * Description: Custom post meta (views, likes, reading time).(views, likes, reading time).(views, likes, reading time).(views, likes, reading time).(views, likes, reading time).(views, likes, reading time).(views, likes, reading time).
  * Version: 1.0.4
  * Author: WolfThemes
  * Author URI: https://wolfthemes.com
