@@ -12,31 +12,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/**
- * Get views
- */
 function wolf_custom_post_meta_get_views( $post_id = null ) {
-
-	if ( ! $post_id ) {
-		$post_id = get_the_ID();
-	}
-
-	$views = get_post_meta( $post_id, '_wolf_views_count', true );
-
-	return wolf_custom_post_meta_format_number( $views );
+    if ( ! $post_id ) {
+        $post_id = get_the_ID();
+    }
+    $views = (int) get_post_meta( $post_id, '_wolf_views_count', true );
+    return wolf_custom_post_meta_format_number( $views );
 }
 
-/**
- * Get likes
- */
 function wolf_custom_post_meta_get_likes( $post_id = null ) {
-	if ( ! $post_id ) {
-		$post_id = get_the_ID();
-	}
-
-	$likes = get_post_meta( $post_id, '_wolf_likes_count', true );
-
-	return wolf_custom_post_meta_format_number( $likes );
+    if ( ! $post_id ) {
+        $post_id = get_the_ID();
+    }
+    $likes = (int) get_post_meta( $post_id, '_wolf_likes_count', true );
+    return wolf_custom_post_meta_format_number( $likes );
 }
 
 /**

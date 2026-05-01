@@ -2,12 +2,12 @@
 /**
  * Plugin Name: Custom Post Meta
  * Plugin URI: https://wlfthm.es/wolf-custom-post-meta
- * Description: Custom post meta (views, likes, reading time).(views, likes, reading time).(views, likes, reading time).(views, likes, reading time).
- * Version: 1.0.3
+ * Description: Custom post meta (views, likes, reading time).(views, likes, reading time).(views, likes, reading time).(views, likes, reading time).(views, likes, reading time).(views, likes, reading time).
+ * Version: 1.0.4
  * Author: WolfThemes
  * Author URI: https://wolfthemes.com
- * Requires at least: 5.0
- * Tested up to: 5.5
+ * Requires at least: 6.0
+ * Tested up to: 6.8
  *
  * Text Domain: wolf-custom-post-meta
  * Domain Path: /languages/
@@ -30,7 +30,7 @@ if ( ! class_exists( 'Wolf_Custom_Post_Meta' ) ) {
 	 * Contains the main functions for Wolf_Custom_Post_Meta
 	 *
 	 * @class Wolf_Custom_Post_Meta
-	 * @version 1.0.3
+	 * @version 1.0.4
 	 * @since 1.0.0
 	 */
 	class Wolf_Custom_Post_Meta {
@@ -38,7 +38,7 @@ if ( ! class_exists( 'Wolf_Custom_Post_Meta' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.3';
+		public $version = '1.0.4';
 
 		/**
 		 * @var Custom Post Meta The single instance of the class
